@@ -1,0 +1,188 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - hii
+- intent: userID
+  examples: |
+    - [123445](uid)
+    - [123456](uid)
+    - [097672](uid)
+    - [989234](uid)
+    - [123444](uid)
+    - [234242](uid)
+    - [120985](uid)
+    - [120933](uid)
+    - [334425](uid)
+    - [1](uid)
+    - [7](uid)
+    - [10](uid)
+    - [9](uid)
+    - [4](uid)
+    - [9](uid)
+- intent: leave_balance
+  examples: |
+    - May I know the information about my leaves
+    - How many leaves are left for me?
+    - How many leaves do I have?
+    - I need my leave balance status
+    - need my leave balance details
+    - could you help me find my leave balance status
+    - what about my balance leaves?
+    - Leaves available
+    - leave balance
+    - Information of leaves
+    - available leaves?
+    - my leave balance
+    - leaves left
+    - i want to know leave balance
+    - may i know leaves left for me?
+    - balance
+- intent: leave_application
+  examples: |
+    
+- intent: leave_type
+  examples: |
+    - "i need balance of [casual leave](leave)"{"entity": "leave", "value":"special_casual_leave"}
+    - "i need balance of [earned leave](leave)"{"entity": "leave", "value":"earned_leave"}
+    - "[earned leave](leave)"{"entity": "leave", "value": "earned_leave"}
+    - "[earned](leave)"{"entity": "leave", "value": "earned_leave"}
+    - "[casual](leave)"{"entity": "leave", "value": "special_casual_leave"}
+    - "[casual leave](leave)"{"entity": "leave", "value": "special_casual_leave"}
+    - "[halfpay](leave)"{"entity": "leave", "value": "half_pay_leave"}
+    - "[halfpay leave](leave)"{"entity": "leave", "value": "half_pay_leave"}
+    - "i need balance of [halfpay leave](leave)"{"entity": "leave", "value":"half_pay_leave"}
+    - "[commuted leave](leave)"{"entity": "leave", "value": "commuted_leave"}
+    - "[commuted](leave)"{"entity": "leave", "value": "commuted_leave"
+    - "[eol with mc](leave)"{"entity": "leave", "value": "eol_with_mc_leave"}
+    - "[eol with mc leave](leave)"{"entity": "leave", "value": "eol_with_mc_leave"}
+    - "[disability half leave](leave)"{"entity": "leave", "value":"disability_half_leave"}
+    - "[disability half](leave)"{"entity": "leave", "value": "disability_half_leave"}
+    - "[child care](leave)"{"entity": "leave", "value": "child_care_leave"}
+    - "[child care leave](leave)"{"entity": "leave", "value": "child_care_leave"}
+    - "[unauthorized leave](leave)"{"entity": "leave", "value":"unauthorized_absence_leave"}
+    - "[unauthorized](leave)"{"entity": "leave", "value": "unauthorized_absence_leave"}
+    - "[disability full leave](leave)"{"entity": "leave", "value":"disability_full_leave"}
+    - "[disability full](leave)"{"entity": "leave", "value": "disability_full_leave"}
+    - "[study](leave)"{"entity": "leave", "value": "study_leave"}
+    - "[study leave](leave)"{"entity": "leave", "value": "study_leave"
+    - "[comp off](leave)"{"entity": "leave", "value": "comp_off_leave"}
+    - "[comp off leave](leave)"{"entity": "leave", "value": "comp_off_leave"}
+    - "[maternity](leave)"{"entity": "leave", "value": "maternity_leave"}
+    - "[maternity leave](leave)"{"entity": "leave", "value": "maternity_leave"}
+    - "[miscarriage](leave)"{"entity": "leave", "value": "miscarriage_leave"}
+    - "[miscarriage leave](leave)"{"entity": "leave", "value": "miscarriage_leave"}
+    - "[paternity](leave)"{"entity": "leave", "value": "paternity_leave"}
+    - "[paternity leave](leave)"{"entity": "leave", "value": "paternity_leave"}
+    - "[adoption](leave)"{"entity": "leave", "value": "adoption_leave"}
+    - "[adoption leave](leave)"{"entity": "leave", "value": "adoption_leave"}
+    - "[eol without mc](leave)"{"entity": "leave", "value": "eol_without_mc_leave"}
+    - "[eol without mc leave](leave)"{"entity": "leave", "value":"eol_without_mc_leave"}
+
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nothing
+- intent: thankyou
+  examples: |
+    - thanks
+    - Thank you
+    - Thanks
+    - great, Thank you
+    - No thanks
+    - thank you
+    - nothing thanks
+- synonym: adoption_leave
+  examples: |
+    - adoption
+    - adoption leave
+
+- synonym: child_care_leave
+  examples: |
+    - child care
+    - child care leave
+- synonym: commuted_leave
+  examples: |
+    - commuted leave
+    - commuted
+- synonym: comp_off_leave
+  examples: |
+    - comp off
+    - comp off leave
+- synonym: disability_full_leave
+  examples: |
+    - disability full leave
+    - disability full
+- synonym: disability_half_leave
+  examples: |
+    - disability half leave
+    - disability half
+- synonym: earned_leave
+  examples: |
+    - earned leave
+    - earned
+- synonym: eol_with_mc_leave
+  examples: |
+    - eol with mc
+    - eol with mc leave
+- synonym: eol_without_mc_leave
+  examples: |
+    - eol without mc
+    - eol without mc leave
+- synonym: half_pay_leave
+  examples: |
+    - halfpay
+    - halfpay leave
+- synonym: maternity_leave
+  examples: |
+    - maternity
+    - maternity leave
+- synonym: miscarriage_leave
+  examples: |
+    - miscarriage
+    - miscarriage leave
+- synonym: paternity_leave
+  examples: |
+    - paternity
+    - paternity leave
+- synonym: special_casual_leave
+  examples: |
+    - casual leave
+    - casual
+- synonym: study_leave
+  examples: |
+    - study
+    - study leave
+- synonym: unauthorized_absence_leave
+  examples: |
+    - unauthorized leave
+    - unauthorized
+- regex: uid
+  examples: |
+    - \d{1,6}
+

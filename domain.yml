@@ -1,0 +1,84 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- userID
+- greet
+- leave_type
+- thankyou
+- leave_balance
+- affirm
+- deny
+entities:
+- leave
+- uid
+slots:
+  leave:
+    type: text
+    influence_conversation: true
+  uid:
+    type: float
+    influence_conversation: false
+    max_value: 1.0
+    min_value: 0.0
+responses:
+  utter_ask_type:
+  - buttons:
+    - payload: '/leave_type {"leave": "earned_leave"}'
+      title: Earned Leave
+    - payload: '/leave_type{"leave": "half_pay_leave"}'
+      title: Half pay leave
+    - payload: '/leave_type{"leave": "commuted_leave"}'
+      title: Commuted leave
+    - payload: '/leave_type{"leave": "special_casual_leave"}'
+      title: Special leave
+    - payload: '/leave_type{"leave": "eol_with_mc_leave"}'
+      title: EOL with MC
+    - payload: '/leave_type{"leave": "disability_half_leave"}'
+      title: 'Disability leave half '
+    - payload: '/leave_type{"leave": "child_care_leave"}'
+      title: Child care leave
+    - payload: '/leave_type{"leave": "unauthorized_absence_leave"}'
+      title: Unauthorized absence leave
+    - payload: '/leave_type{"leave": "disability_full_leave"}'
+      title: 'Disability leave full '
+    - payload: '/leave_type{"leave": "study_leave"}'
+      title: Study leave
+    - payload: '/leave_type{"leave": "comp_off_leave"}'
+      title: Comp off leave
+    - payload: '/leave_type{"leave": "maternity_leave"}'
+      title: Maternity leave
+    - payload: '/leave_type{"leave": "miscarriage_leave"}'
+      title: Miscarriage leave
+    - payload: '/leave_type{"leave": "paternity_leave"}'
+      title: Paternity leave
+    - payload: '/leave_type{"leave": "adoption_leave"}'
+      title: Adoption leave
+    - payload: '/leave_type{"leave": "eol_without_mc_leave"}'
+      title: EOL without MC leave
+    text: Which leave do you want to proceed with??
+  utter_ask_userID:
+  - text: Please enter your UserId...
+  utter_cancelRequest_sent:
+  - text: Your Leave Cancellation request has been sent! Please wait for further updates...
+  utter_goodbye:
+  - text: Bye
+  utter_greet_leave:
+  - text: Hello! I am a leave bot...
+  utter_help:
+  - text: How may I help you..?
+  utter_thanks:
+  - text: Thank you!!
+  utter_wait:
+  - text: Please cooperate for a second while the request is processed..!!
+  utter_whatElse:
+  - text: For what else i would be helpful for you?
+actions:
+- action_balance
+- utter_ask_type
+- utter_ask_userID
+- utter_greet_leave
+- utter_help
+- utter_thanks
+- utter_wait
+- utter_whatElse
