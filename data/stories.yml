@@ -1,7 +1,7 @@
 version: "2.0"
 
 stories:
-- story: interactive_story_1
+- story: Balance
   steps:
   - intent: greet
   - action: utter_greet_leave
@@ -25,10 +25,233 @@ stories:
   - intent: thankyou
   - action: utter_thanks
 
+##################################################################################################
 
-# - story: Balance and Balance
-#   steps:
-#   - intent: greet
+- story: Application
+  steps:
+  - intent: greet
+  - action: utter_greet_leave
+  - action: utter_ask_userID
+  - intent: userID
+    entities:
+    - uid: '9'
+  - action: utter_help
+  - intent: leave_application
+  - action: utter_ask_type
+  - intent: leave_type
+    entities:
+    - leave: disability_half_leave
+  - action: utter_ask_start_date
+  - intent: start_date
+    entities:
+    - start: 12-12-2021
+  - action: utter_ask_end_date
+  - intent: end_date
+    entities:
+    - end: 15-12-2021E
+  - action: utter_ask_leave_reason
+  - intent: leave_reason
+    entities:
+    - reason: "I have a doctor appointment!"
+  - action: utter_wait
+  - action: action_leave_application
+  - action: utter_applyRequest_sent
+  - action: utter_whatElse
+  - intent: thankyou
+  - action: utter_thanks
+
+##################################################################################################
+
+- story: Balance and Application
+  steps:
+  - intent: greet
+  - action: utter_greet_leave
+  - action: utter_ask_userID
+  - intent: userID
+    entities:
+    - uid: '7'
+  - slot_was_set:
+    - uid: '7'
+  - action: utter_help
+  - intent: leave_balance
+  - action: utter_ask_type
+  - intent: leave_type
+    entities:
+    - leave: disability_half_leave
+  - slot_was_set:
+    - leave: disability_half_leave
+  - action: utter_wait
+  - action: action_balance
+  - action: utter_whatElse
+  - intent: leave_application
+  - action: utter_ask_type
+  - intent: leave_type
+    entities:
+    - leave: disability_half_leave
+  - action: utter_ask_start_date
+  - intent: start_date
+    entities:
+    - start: 12-12-2021
+  - action: utter_ask_end_date
+  - intent: end_date
+    entities:
+    - end: 15-12-2021E
+  - action: utter_ask_leave_reason
+  - intent: leave_reason
+    entities:
+    - reason: "I have a doctor appointment!"
+  - action: utter_wait
+  - action: action_leave_application
+  - action: utter_applyRequest_sent
+  - action: utter_whatElse
+  - intent: thankyou
+  - action: utter_thanks
+
+##################################################################################################
+
+- story: Application and Balance
+  steps:
+  - intent: greet
+  - action: utter_greet_leave
+  - action: utter_ask_userID
+  - intent: userID
+    entities:
+    - uid: '7'
+  - slot_was_set:
+    - uid: '7'
+  - action: utter_help
+  - intent: leave_application
+  - action: utter_ask_type
+  - intent: leave_type
+    entities:
+    - leave: disability_half_leave
+  - action: utter_ask_start_date
+  - intent: start_date
+    entities:
+    - start: 12-12-2021
+  - action: utter_ask_end_date
+  - intent: end_date
+    entities:
+    - end: 15-12-2021E
+  - action: utter_ask_leave_reason
+  - intent: leave_reason
+    entities:
+    - reason: "I have a doctor appointment!"
+  - action: utter_wait
+  - action: action_leave_application
+  - action: utter_applyRequest_sent
+  - action: utter_whatElse
+  - intent: leave_balance
+  - action: utter_ask_type
+  - intent: leave_type
+    entities:
+    - leave: disability_half_leave
+  - slot_was_set:
+    - leave: disability_half_leave
+  - action: utter_wait
+  - action: action_balance
+  - action: utter_whatElse
+  - intent: thankyou
+  - action: utter_thanks
+
+##################################################################################################
+
+- story: Application and Application
+  steps:
+  - intent: greet
+  - action: utter_greet_leave
+  - action: utter_ask_userID
+  - intent: userID
+    entities:
+    - uid: '7'
+  - slot_was_set:
+    - uid: '7'
+  - action: utter_help
+  - intent: leave_application
+  - action: utter_ask_type
+  - intent: leave_type
+    entities:
+    - leave: disability_half_leave
+  - action: utter_ask_start_date
+  - intent: start_date
+    entities:
+    - start: 12-12-2021
+  - action: utter_ask_end_date
+  - intent: end_date
+    entities:
+    - end: 15-12-2021E
+  - action: utter_ask_leave_reason
+  - intent: leave_reason
+    entities:
+    - reason: "I have a doctor appointment!"
+  - action: utter_wait
+  - action: action_leave_application
+  - action: utter_applyRequest_sent
+  - action: utter_whatElse
+  - intent: leave_application
+  - action: utter_ask_type
+  - intent: leave_type
+    entities:
+    - leave: disability_half_leave
+  - action: utter_ask_start_date
+  - intent: start_date
+    entities:
+    - start: 12-12-2021
+  - action: utter_ask_end_date
+  - intent: end_date
+    entities:
+    - end: 15-12-2021E
+  - action: utter_ask_leave_reason
+  - intent: leave_reason
+    entities:
+    - reason: "I have a doctor appointment!"
+  - action: utter_wait
+  - action: action_leave_application
+  - action: utter_applyRequest_sent
+  - action: utter_whatElse
+  - intent: thankyou
+  - action: utter_thanks
+
+##################################################################################################
+
+- story: Balance and Balance
+  steps:
+  - intent: greet
+  - action: utter_greet_leave
+  - action: utter_ask_userID
+  - intent: userID
+    entities:
+    - uid: '9'
+  - slot_was_set:
+    - uid: '9'
+  - action: utter_help
+  - intent: leave_balance
+  - action: utter_ask_type
+  - intent: leave_type
+    entities:
+    - leave: disability_half_leave
+  - slot_was_set:
+    - leave: disability_half_leave
+  - action: utter_wait
+  - action: action_balance
+  - action: utter_whatElse
+  - intent: leave_balance
+  - action: utter_ask_type
+  - intent: leave_type
+    entities:
+    - leave: disability_half_leave
+  - slot_was_set:
+    - leave: disability_half_leave
+  - action: utter_wait
+  - action: action_balance
+  - action: utter_whatElse
+  - intent: thankyou
+  - action: utter_thanks
+
+##################################################################################################
+
+
+#   - intent:: greet
 #   - action: utter_greet_leave
 #   - action: utter_ask_userID
 #   - intent: userID
@@ -116,4 +339,5 @@ stories:
 #   - intent: thankyou
 #   - action: utter_goodbye
 
-#
+# - story: Balance and Balance
+#   steps:

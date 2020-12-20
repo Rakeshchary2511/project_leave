@@ -1,16 +1,24 @@
+version: '2.0'
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- userID
-- greet
-- leave_type
 - thankyou
+- greet
 - leave_balance
+- leave_type
+- userID
 - affirm
 - deny
+- leave_application
+- start_date
+- end_date
+- leave_reason
 entities:
+- end
 - leave
+- reason
+- start
 - uid
 slots:
   leave:
@@ -21,6 +29,15 @@ slots:
     influence_conversation: false
     max_value: 1.0
     min_value: 0.0
+  start:
+    type: text
+    influence_conversation: false
+  end:
+    type: text
+    influence_conversation: false
+  reason:
+    type: text
+    influence_conversation: false
 responses:
   utter_ask_type:
   - buttons:
@@ -57,8 +74,16 @@ responses:
     - payload: '/leave_type{"leave": "eol_without_mc_leave"}'
       title: EOL without MC leave
     text: Which leave do you want to proceed with??
+  utter_applyRequest_sent:
+  - text: Your Leave Application request has been sent! Please wait for further updates...
   utter_ask_userID:
   - text: Please enter your UserId...
+  utter_ask_end_date:
+  - text: Could you please specify the end date(DD-MM-YYYY)?
+  utter_ask_leave_reason:
+  - text: Could you please specify the reason for applying the leave?
+  utter_ask_start_date:
+  - text: Could you please specify the start date(DD-MM-YYYY)?
   utter_cancelRequest_sent:
   - text: Your Leave Cancellation request has been sent! Please wait for further updates...
   utter_goodbye:
@@ -75,6 +100,7 @@ responses:
   - text: For what else i would be helpful for you?
 actions:
 - action_balance
+- action_leave_application
 - utter_ask_type
 - utter_ask_userID
 - utter_greet_leave

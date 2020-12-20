@@ -16,6 +16,7 @@ nlu:
     - goodevening
     - good afternoon
     - hii
+    - hii there
 - intent: userID
   examples: |
     - [123445](uid)
@@ -32,7 +33,7 @@ nlu:
     - [10](uid)
     - [9](uid)
     - [4](uid)
-    - [9](uid)
+    - [7](uid)
 - intent: leave_balance
   examples: |
     - May I know the information about my leaves
@@ -53,7 +54,53 @@ nlu:
     - balance
 - intent: leave_application
   examples: |
-    
+    - I want to apply for leave
+    - application for leave
+    - could you help me apply for my leave
+    - apply leave
+    - leave application
+    - give me a leave application
+    - prompt me leave applying process
+    - i have to apply for leave
+    - help me apply for leave
+- intent: start_date
+  examples: |
+    - [12-02-2020](start)
+    - [31-04-2020](start)
+    - [22-10-2019](start)
+    - [21-10-2019](start)
+    - [02-01-2012](start)
+    - [26-10-2020](start)
+    - [29-10-2020](start)
+    - [14-12-2020](start)
+    - [14-08-2019](start)
+- intent: end_date
+  examples: |
+    - [12-06-2020E](end)
+    - [24-04-2021E](end)
+    - [08-05-2012E](end)
+    - [09-09-2019E](end)
+    - [15-12-2022E](end)
+    - [28-10-2020E](end)
+    - [31-10-2020E](end)
+    - [10-01-2021E](end)
+    - [19-08-2019E](end)
+- intent: leave_reason
+  examples: |
+    - [I am not feeling well](reason)
+    - [I am not feeling well.so i wish to apply for leave](reason)
+    - [i want to apply leave because i am suffering from health issues.I need some rest](reason)
+    - [The main reason behind applying leave is that i have appointment booked with doctor.I have to visit hospital however](reason)
+    - [I have to visit hospital however so i am putting this request](reason)
+    - [please consider my leave application request as i want to visit my hometown](reason)
+    - [I am suffering with fever. so i am willing to apply for leave](reason)
+    - [I have an urgent work](reason)
+    - [I have to move out of station](reason)
+    - [As of sudden, i have to leave India](reason)
+    - [I have a conference to attend](reason)
+    - [I have a hospital checkup](reason)
+    - [I have an appointment with doctor](reason)
+    - [Preparing for placements](reason)
 - intent: leave_type
   examples: |
     - "i need balance of [casual leave](leave)"{"entity": "leave", "value":"special_casual_leave"}
@@ -91,7 +138,6 @@ nlu:
     - "[adoption leave](leave)"{"entity": "leave", "value": "adoption_leave"}
     - "[eol without mc](leave)"{"entity": "leave", "value": "eol_without_mc_leave"}
     - "[eol without mc leave](leave)"{"entity": "leave", "value":"eol_without_mc_leave"}
-
 - intent: affirm
   examples: |
     - yes
@@ -121,7 +167,6 @@ nlu:
   examples: |
     - adoption
     - adoption leave
-
 - synonym: child_care_leave
   examples: |
     - child care
@@ -185,4 +230,3 @@ nlu:
 - regex: uid
   examples: |
     - \d{1,6}
-
