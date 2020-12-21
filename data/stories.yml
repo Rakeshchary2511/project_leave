@@ -92,13 +92,19 @@ stories:
   - intent: start_date
     entities:
     - start: 12-12-2021
+  - slot_was_set:
+    - start: 12-12-2021
   - action: utter_ask_end_date
   - intent: end_date
     entities:
     - end: 15-12-2021E
+  - slot_was_set:
+    - end: 15-12-2021E
   - action: utter_ask_leave_reason
   - intent: leave_reason
     entities:
+    - reason: "I have a doctor appointment!"
+  - slot_was_set:
     - reason: "I have a doctor appointment!"
   - action: utter_wait
   - action: action_leave_application
@@ -172,17 +178,25 @@ stories:
   - intent: leave_type
     entities:
     - leave: disability_half_leave
+  - slot_was_set:
+    - leave: disability_half_leave
   - action: utter_ask_start_date
   - intent: start_date
     entities:
+    - start: 12-12-2021
+  - slot_was_set:
     - start: 12-12-2021
   - action: utter_ask_end_date
   - intent: end_date
     entities:
     - end: 15-12-2021E
+  - slot_was_set:
+    - end: 15-12-2021E
   - action: utter_ask_leave_reason
   - intent: leave_reason
     entities:
+    - reason: "I have a doctor appointment!"
+  - slot_was_set:
     - reason: "I have a doctor appointment!"
   - action: utter_wait
   - action: action_leave_application
@@ -197,13 +211,19 @@ stories:
   - intent: start_date
     entities:
     - start: 12-12-2021
+  - slot_was_set:
+    - start: 12-12-2021
   - action: utter_ask_end_date
   - intent: end_date
     entities:
     - end: 15-12-2021E
+  - slot_was_set:
+    - end: 15-12-2021E
   - action: utter_ask_leave_reason
   - intent: leave_reason
     entities:
+    - reason: "I have a doctor appointment!"
+  - slot_was_set:
     - reason: "I have a doctor appointment!"
   - action: utter_wait
   - action: action_leave_application
@@ -269,9 +289,6 @@ stories:
 #   - intent: thankyou
 #   - action: utter_thanks
 
-
-
-
 # - story: happy path
 #   steps:
 #   - intent: greet
@@ -298,8 +315,6 @@ stories:
 #   - action: utter_did_that_help
 #   - intent: deny
 #   - action: utter_goodbye
-
-
 
 # - story: interactive_story_1
 #   steps:
@@ -338,6 +353,3 @@ stories:
 #   - action: utter_thanks
 #   - intent: thankyou
 #   - action: utter_goodbye
-
-# - story: Balance and Balance
-#   steps:

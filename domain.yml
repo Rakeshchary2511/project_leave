@@ -1,4 +1,3 @@
-version: '2.0'
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
@@ -14,6 +13,9 @@ intents:
 - start_date
 - end_date
 - leave_reason
+- bot_challenge
+- goodbye
+
 entities:
 - end
 - leave
@@ -78,6 +80,8 @@ responses:
   - text: Your Leave Application request has been sent! Please wait for further updates...
   utter_ask_userID:
   - text: Please enter your UserId...
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."  
   utter_ask_end_date:
   - text: Could you please specify the end date(DD-MM-YYYY)?
   utter_ask_leave_reason:
